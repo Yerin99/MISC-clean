@@ -1,0 +1,9 @@
+__pycache__/
+
+blender_strategy/*
+!blender_strategy/.gitkeep
+
+runs/*
+
+blender-small/*
+!blender-small/.gitkeep

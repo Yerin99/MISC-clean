@@ -4,6 +4,8 @@ blender_strategy/*
 !blender_strategy/.gitkeep
 
 runs/*
+cached/*
+cached_off_strategy/*
 
 blender-small/*
 !blender-small/.gitkeep

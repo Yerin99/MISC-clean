@@ -56,9 +56,30 @@ a.gradient_accumulation_steps = 4
 main(a)
 PY
 ```
+- Optional: to remove strategy tokens from inputs as well, set `a.strategy = False`.
+
+### Ablation (user-added): OffStrategy disables mixed strategy injection
+
+```bash
+CUDA_VISIBLE_DEVICES=1 python3 - <<'PY'
+from BlenderEmtionalSupportOffStrategy import Args, main
+a = Args()
+a.no_cuda = False
+a.model_name_or_path = "./blenderbot_small-90M"
+
+# memory-friendly settings
+a.per_gpu_train_batch_size = 5
+a.per_gpu_eval_batch_size = 10
+a.gradient_accumulation_steps = 4
+
+main(a)
+PY
+```
+- Note: this script is an ablation I added to remove the mixed-strategy injection module.
+- Optional: to remove strategy tokens from inputs as well, set `a.strategy = False`.
 
 Artifacts:
-- checkpoints: `blender_strategy/<TAG>/` (default TAG: `all_loss`)
+- checkpoints: `blender_strategy/<TAG>/` (e.g., `off_strategy`)
 - generations and summary: `generated_data/<TAG>/`
 
 

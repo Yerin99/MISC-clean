@@ -6,6 +6,7 @@ blender_strategy/*
 runs/*
 cached/*
 cached_off_strategy/*
+generated_data/all_loss/*
 
 blender-small/*
 !blender-small/.gitkeep
